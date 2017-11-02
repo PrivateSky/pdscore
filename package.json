@@ -2,6 +2,6 @@
   "name": "pdscore",
   "version": "0.0.1",
   "dependencies": {
-    
+    "double-check": "git+https://github.com/PrivateSky/double-check.git"
   }
 }
