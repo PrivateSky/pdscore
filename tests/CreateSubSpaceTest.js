@@ -1,7 +1,7 @@
 var pdsCore = require("../lib/index");
 var assert = require("double-check").assert;
 
-var networkConnection = require("./util/NetworkConnection.js");
+var networkConnection = require("./util/NetworkConnectionMock.js");
 
 var configuration = {
     id: "TEST",
