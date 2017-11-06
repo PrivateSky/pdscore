@@ -1,4 +1,4 @@
-var pdsCore = require("./../lib/PDSCore");
+var pdsCore = require("../lib/index");
 var assert = require("double-check").assert;
 
 var networkConnection = require("./util/NetworkConnection.js");
