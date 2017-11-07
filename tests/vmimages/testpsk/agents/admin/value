@@ -1,0 +1,6 @@
+{
+ masterKey:{
+    type:"naive",
+    public:"P"
+ }
+}

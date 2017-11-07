@@ -1,33 +1,25 @@
 
+
 var assert = require("double-check").assert;
+var flow = require("callflow");
 
 //create testVM global variables
-require("./util/SandboxedPrivateSkyRoot");
+var vm = require("./util/SandboxedPrivateSkyRoot");
 
 
-function init(next){
-    testVM.getSpace("pds://privatesky/", next)
-}
 
-function act(next){
-    testVM.setValue("keys/something","test", next);
-}
-
-function test(end){
-    testVM.getValue("keys/something",function(value){
-        assert.equal(value,"test");
-        end();
-    });
-
-    /*assert.callback("Testing value", function(end){
-
-    });*/
-}
-
-assert.steps("Testing how to write and read a key from pds at the level of the VM host",[
-    init,
-    act,
-    test
-]);
-
-
+assert.callback("Testing initialisation of the VM...", flow.createFlow("Test initialisation", {
+    init:function(end){
+        this.end = end;
+        this.act();
+    },
+    act:function(){
+        assert.notNull(mockedConnection);
+        mockedConnection.executeSwarm("testSwarm", "test", this.test);
+    },
+    test:function(result){
+        assert.notNull(testVM);
+        assert.equal(result.result, "Hello World");
+        this.end();
+    }
+}));

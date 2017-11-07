@@ -1,0 +1,8 @@
+{
+    id: "PrivateSky",
+    fingerprintAlgorithm: "naive",
+    signatureAlgorithm: "naive",
+    consent: "consent",
+    access:  "access",
+    execute:  "execute"
+}
