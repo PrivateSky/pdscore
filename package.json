@@ -32,6 +32,7 @@
     "node": ">=0.12.0"
   },
   "main": "./index.js",
+  "license": "MIT",
   "licenses": [
     {
       "type": "LGPL",
@@ -40,7 +41,7 @@
   ],
   "_id": "pdscore@0.1.0",
   "dependencies" : {
-    "callflow"  :"git+https://github.com/PrivateSky/double-check.git",
+    "callflow"  :"git+https://github.com/PrivateSky/callflow.git",
     "double-check"  :"git+https://github.com/PrivateSky/double-check.git"
 
   }

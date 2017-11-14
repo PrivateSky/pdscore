@@ -1,7 +1,7 @@
-var pdsCore = require("../lib/index");
+var pdsCore = require("../../lib/index.js");
 
 
-var networkConnection = require("NetworkConnectionMock.js");
+var networkConnection = require("./NetworkConnectionMock.js");
 
 
 var vmConfig = {
@@ -12,16 +12,12 @@ var vmConfig = {
 };
 
 function initSandbox(callback){
-
-
     var vm = pdsCore.startVM(vmConfig, networkConnection);
     vm.replicateSpace("pds://PrivateSky", callback);
     return vm;
 }
 
-testVM = initSandbox(function(){
-    //console.log("Initi");
-});
+testVM = pdsCore.createVM("../vmimages/testpsk");
 
 exports.vm = testVM;
 
