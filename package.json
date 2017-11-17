@@ -41,6 +41,7 @@
   ],
   "_id": "pdscore@0.1.0",
   "dependencies": {
+    "xrequire": "git+https://github.com/PrivateSky/xrequire.git",
     "pskruntime": "git+https://github.com/PrivateSky/pskruntime.git",
     "callflow": "git+https://github.com/PrivateSky/callflow.git",
     "double-check": "git+https://github.com/PrivateSky/double-check.git",
