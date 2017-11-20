@@ -9,19 +9,21 @@ var pskruntime = require("pskruntime");
 var vm = require("./util/SandboxedPrivateSkyRoot");
 
 
+
+
 var myTest =  flow.createFlow("Test initialisation", {
     begin:function(end){
         this.end = end;
+        console.log("....");
         this.act();
     },
     act:function(){
-        //assert.notNull(mockedConnection, "Connection does not exist");
-        assert.notNull(testVM);
+        assert.notNull(testVM, "There is no privateSky virtual machine available");
         var msg = pskruntime.createSwarmMessageFromJson("testSwarm", "begin", "admin","p", {
            var:"variable"
         });
 
-        testVM.resolveSwarmMessage(msg, this.test);
+        testVM.resolveSwarmMessage(msg, this.continue("test"));
     },
     test:function(result){
         assert.equal(result.result, "Hello World");
@@ -29,5 +31,6 @@ var myTest =  flow.createFlow("Test initialisation", {
     }
 });
 
+//myTest();
 
 assert.callback("Testing initialisation of the VM...", myTest);
