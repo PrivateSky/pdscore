@@ -1,5 +1,7 @@
 
 
+var thisModule = require("../lib/index.js");
+
 var assert = require("double-check").assert;
 var flow = require("callflow");
 
@@ -14,7 +16,6 @@ var vm = require("./util/SandboxedPrivateSkyRoot");
 var myTest =  flow.createFlow("Test initialisation", {
     begin:function(end){
         this.end = end;
-        console.log("....");
         this.act();
     },
     act:function(){
