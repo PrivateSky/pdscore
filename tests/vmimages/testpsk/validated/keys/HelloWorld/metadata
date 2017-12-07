@@ -1,0 +1,6 @@
+{
+localPdsTime:"pdstime"
+previousHash:"hash"
+currentHash:"hash"
+modificationProof:"proof"
+}
