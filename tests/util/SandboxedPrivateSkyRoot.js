@@ -17,7 +17,7 @@ function initSandbox(callback){
     return vm;
 }
 
-testVM = pdsCore.createVM("../vmimages/testpsk");
+testVM = pdsCore.createVM("../vmimages/testpsk", ["testpsk"]);
 
 exports.vm = testVM;
 
